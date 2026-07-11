@@ -294,13 +294,14 @@ export default function Hero({ introDone }) {
       {/* ── Scroll Indicator ── */}
       <AnimatePresence>
         {introDone && (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0 }}
-            transition={{ delay: 1.4, duration: 0.8 }}
-            className="scroll-indicator absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10"
-          >
+          <div className="absolute bottom-8 sm:bottom-12 left-0 w-full flex justify-center z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+              transition={{ delay: 1.4, duration: 0.8 }}
+              className="scroll-indicator flex flex-col items-center gap-3"
+            >
             <span className="text-sm font-mono font-bold text-steel/60 tracking-[0.3em] uppercase">
               Scroll to Explore
             </span>
@@ -321,7 +322,8 @@ export default function Hero({ introDone }) {
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               className="absolute bottom-0 left-1/2 -translate-x-1/2 w-8 h-12 rounded-full border border-accent/20"
             />
-          </motion.div>
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
 

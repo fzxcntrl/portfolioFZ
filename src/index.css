@@ -272,18 +272,19 @@ a, button, input, textarea {
 
 .cursor-dot-center {
   position: absolute;
-  top: -2px;
-  left: -2px;
+  top: 0;
+  left: 0;
   width: 4px;
   height: 4px;
   background: var(--color-accent);
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255, 26, 26, 0.8);
   transition: transform 0.2s, background 0.2s;
+  transform: translate(-50%, -50%);
 }
 
 .cursor-dot[data-hover="1"] .cursor-dot-center {
-  transform: scale(1.5);
+  transform: translate(-50%, -50%) scale(1.5);
   background: var(--color-ghost);
 }
 
@@ -291,12 +292,13 @@ a, button, input, textarea {
   position: absolute;
   background: var(--color-accent);
   transition: transform 0.2s, opacity 0.2s;
+  border-radius: 1px;
 }
 
-.cursor-tick-t { top: -8px; left: -0.5px; width: 1px; height: 4px; }
-.cursor-tick-b { bottom: -8px; left: -0.5px; width: 1px; height: 4px; }
-.cursor-tick-l { top: -0.5px; left: -8px; width: 4px; height: 1px; }
-.cursor-tick-r { top: -0.5px; right: -8px; width: 4px; height: 1px; }
+.cursor-tick-t { top: -14px; left: 0; width: 2px; height: 6px; transform: translate(-50%, 0); }
+.cursor-tick-b { top: 8px; left: 0; width: 2px; height: 6px; transform: translate(-50%, 0); }
+.cursor-tick-l { top: 0; left: -14px; width: 6px; height: 2px; transform: translate(0, -50%); }
+.cursor-tick-r { top: 0; left: 8px; width: 6px; height: 2px; transform: translate(0, -50%); }
 
 .cursor-dot[data-hover="1"] .cursor-tick {
   transform: scale(0);
